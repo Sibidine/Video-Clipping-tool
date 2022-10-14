@@ -12,3 +12,6 @@ git clone https://github.com/Sibidine/Video-Clipping-tool.git
 cd Video-Clipping-tool
 chmod +x clip.sh
 ./clip.sh
+```
+
+Todo- Add a master script that invokes both the current scripts, and correct the readme to give instructions to run the master script instead.
