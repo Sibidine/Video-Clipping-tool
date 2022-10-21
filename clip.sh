@@ -24,11 +24,11 @@ then
 	if [[ file_type -eq 1 ]]
 	then
 		# AUDIO
-		youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$link"
+		youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$link" > download_logs.txt
 	elif [[ file_type -eq 2 ]]
 	then
 		#  VIDEO
-		youtube-dl "$link"
+		youtube-dl "$link" > download_logs.txt
 	fi
 
 # PORTION OF THE FULL VIDEO
@@ -47,10 +47,12 @@ then
 	if [[ file_type -eq 1 ]]
 	then
 		# AUDIO
-		ffmpeg -ss $start_time -i "$audio_url" -t $length $name_output.mp3
+		ffmpeg -ss $start_time -i "$audio_url" -t $length $name_output.mp3 > download_logs.txt
 	elif [[ file_type -eq 2 ]]
 	then
 		# VIDEO	
-		ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -t $length -c:v libx264 -c:a aac $name_output.mp4
+		ffmpeg -ss $start_time -i "$video_url" -ss $start_time -i "$audio_url" -map 0:v -map 1:a -t $length -c:v libx264 -c:a aac $name_output.mp4 > download_logs.txt
 	fi
 fi
+
+echo -e "\nCheck if the download has completed in the present working directory, if not, check the download_logs.txt." 
