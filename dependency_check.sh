@@ -12,7 +12,7 @@ if [[ $deps -ne 1 ]]
 then
 	echo "OK" 
 else	 
-	echo -en "\nInstall the above and rerun this script\n";exit 1;
+	echo -en "\nInstall the above and rerun this script.\nYou may install ffmpeg or yt-dlp via your package manager or via python3's pip.\n";exit 1;
 fi
 
 
