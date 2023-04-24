@@ -3,7 +3,7 @@
 echo -n "Checking dependencies... "
 
 
-for dependency_name in youtube-dl ffmpeg
+for dependency_name in yt-dlp ffmpeg
 do
    [[ $(which $dependency_name 2>/dev/null) ]] || { echo -en "\n$dependency_name needs to be installed. Use 'sudo apt install $dependency_name'";deps=1; }
 done
