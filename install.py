@@ -34,7 +34,7 @@ else:
   
  # now clone the repo
 print("cloning the repo")
-prcs = system("git clone https://github.com/Sibidine/Video-Clipping-Tool")
+prcs = system("git clone https://github.com/sontaimnt/Video-Clipping-Tool")
 if prcs != 0:
   print("installation failed")
 else:
