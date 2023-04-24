@@ -2,7 +2,7 @@
 # |install.py - The install script for Video-Clipping-Tool|
 # |=======================================================|
 
-from os import system
+from os import system, chdir
 from os.path import isfile
 
 # package managers(currently apt,pacman,dnf)
