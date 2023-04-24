@@ -7,13 +7,12 @@ This tool will allow the user to generate a clip from a youtube video using `yt-
 
 Disclaimer: Make sure to have both `ffmpeg` and `yt-dlp` installed for this to work!
 
-Usage instructions: 
+installation instructions: 
 
 ``` 
-git clone https://github.com/Sibidine/Video-Clipping-tool.git
-cd Video-Clipping-tool
-chmod +x clip.sh
-./clip.sh
+wget https://raw.githubusercontent.com/sontaimnt/Video-Clipping-Tool/main/install.py
+python install.py
+clip
 ```
 
 Todo- Add a master script that invokes both the current scripts, and correct the readme to give instructions to run the master script instead.
