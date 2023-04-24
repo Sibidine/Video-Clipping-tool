@@ -24,11 +24,11 @@ then
 	if [[ file_type -eq 1 ]]
 	then
 		# AUDIO
-		youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$link" > download_logs.txt
+		yt-dlp -x --audio-format mp3 --prefer-ffmpeg "$link" > download_logs.txt
 	elif [[ file_type -eq 2 ]]
 	then
 		#  VIDEO
-		youtube-dl "$link" > download_logs.txt
+		yt-dlp "$link" > download_logs.txt
 	fi
 
 # PORTION OF THE FULL VIDEO
@@ -42,7 +42,7 @@ then
 	read file_type
 
 	#GENERATING THE TRUE URLs FOR THE VIDEO
-	read -d'\n' video_url audio_url <<< $(youtube-dl --youtube-skip-dash-manifest -g "$link")
+	read -d'\n' video_url audio_url <<< $(yt-dlp --youtube-skip-dash-manifest -g "$link")
 
 	if [[ file_type -eq 1 ]]
 	then
