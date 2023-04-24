@@ -5,31 +5,45 @@
 from os import system
 from os.path import isfile
 
-# package managers(currently apt,pacman,dnf,xbps,apk)
+# package managers(currently apt,pacman,dnf)
 path_apt = "/usr/bin/apt"
 path_pacman = "/usr/bin/pacman"
 path_dnf = "/usr/bin/dnf"
-path_xbps = "/usr/bin/xbps"
-path_apk = "/usr/bin/apk"
 
 # git is the only make depend
 if isfile(path_apt) == True:
-  prcs = system("sudo apt install git")
+  prcs = system("sudo apt install git ffmpeg yt-dlp")
   if prcs != 0:
     raise OSError("error: git failed to install")
   else:
     pass
 elif isfile(path_pacman) == True:
-  prcs = system("sudo pacman -S git")
+  prcs = system("sudo pacman -S git ffmpeg yt-dlp")
   if prcs != 0:
     raise OSError("error: git failed to install")
   else:
     pass
 elif isfile(path_pacman) == True:
-  prcs = system("sudo pacman -S git")
+  prcs = system("sudo dnf install git ffmpeg yt-dlp")
   if prcs != 0:
     raise OSError("error: git failed to install")
   else:
     pass
 else:
   print("error: unsupported package manager")
+  
+ # now clone the repo
+print("cloning the repo")
+prcs = system("git clone https://github.com/Sibidine/Video-Clipping-Tool")
+if prcs != 0:
+  print("installation failed")
+else:
+  pass
+
+chdir("Video-Clipping-Tool")
+print("now installing Video-Clipping-Tool")
+prcs = system("sudo install -Dm755 clip.sh /usr/bin/clip")
+if prcs != 0:
+  print("installation failed")
+else:
+  print("Video-Clipping-Tool installed")
