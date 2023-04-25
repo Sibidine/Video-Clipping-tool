@@ -55,4 +55,9 @@ then
 	fi
 fi
 
-echo -e "\nCheck if the download has completed in the present working directory, if not, check the download_logs.txt." 
+echo -e "\nChecking if the video was downloaded if not, check the download_logs.txt." 
+if [ -f "$name_output.mp4" ]; then  
+echo "$name_output.mp4 was downloaded sucessfully "
+else
+echo "$name_output was not downloaded due to errors"
+fi  
