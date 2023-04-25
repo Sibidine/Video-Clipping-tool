@@ -13,6 +13,14 @@
 #INPUT
 
 read -p "Enter link to video: " link
+
+# Check if the link starts with "https://www.youtube.com"
+if ! [[ $link == https://www.youtube.com* ]]; then
+	echo "Link does not start with https://www.youtube.com"
+	echo "Please provide a valid link"
+	exit 1
+fi
+
 echo "Enter 1 for the full video, enter 2 for a portion"
 read video_length
 
@@ -41,7 +49,12 @@ then
 	echo "Enter 1 for audio, 2 for video"
 	read file_type
 
-	#GENERATING THE TRUE URLs FOR THE VIDEO
+	# SETTING SENSIBLE DEFAULTS
+	start_time=${start_time:-"00:00:00"}
+	length=${length:-"30"}
+	name_output=${name_output:-"unnamed_$(date +"%B_%d_%Y_%T")"}
+
+	# GENERATING THE TRUE URLs FOR THE VIDEO
 	read -d'\n' video_url audio_url <<< $(yt-dlp --youtube-skip-dash-manifest -g "$link")
 
 	if [[ file_type -eq 1 ]]
