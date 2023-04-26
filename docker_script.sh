@@ -7,5 +7,10 @@
 pwd
 ls -la
 
-cp *.mp4 *.mp3  /media
-cp download_logs.txt  /media
+
+mv *.mp4 *.mp3  /media
+mv download_logs.txt  /media
+
+
+# cp *.mp4 *.mp3  /media
+# cp download_logs.txt  /media

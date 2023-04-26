@@ -23,7 +23,7 @@ You may replace podman with docker.
 Clone the repo, cd into it and then build the image
 ```
 podman build --no-cache --rm -t video-clipping-tool-image .
-podman run -it -v $(pwd):/media video-clipping-tool-image
+podman run --rm -it -v $(pwd):/media video-clipping-tool-image
 ```
 
 To remove the image
