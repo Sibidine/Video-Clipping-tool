@@ -1,5 +1,5 @@
-# Git ignore
 
+README.md
 download_logs.txt
 *.mp3
 *.mp4
