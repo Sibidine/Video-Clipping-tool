@@ -36,7 +36,7 @@ then
 	elif [[ file_type -eq 2 ]]
 	then
 		#  VIDEO
-		yt-dlp "$link" > download_logs.txt
+		yt-dlp "$link" -S res,ext:mp4:m4a --recode mp4 > download_logs.txt
 	fi
 
 # PORTION OF THE FULL VIDEO
